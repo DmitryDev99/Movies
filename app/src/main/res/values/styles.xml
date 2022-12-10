@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--region Элементы управления -->
+
+    <!--region Кнопки-->
+    <style name="Button" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/bg_button_main</item>
+        <item name="minHeight">48dp</item>
+        <item name="minWidth">88dp</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Button.Main">
+        <item name="android:textAppearance">@style/Text.P1.Main</item>
+        <item name="android:paddingStart">@dimen/padding_small</item>
+        <item name="android:paddingEnd">@dimen/padding_small</item>
+    </style>
+    <!--endregion-->
+    <!--endregion-->
+
+    <!--region Текст -->
+    <style name="Text">
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="android:textColor">@color/main_text</item>
+    </style>
+
+    <!--region H1-->
+    <style name="Text.H1">
+        <item name="android:textSize">36sp</item>
+    </style>
+    <style name="Text.H1.Main"/>
+    <style name="Text.H1.Secondary">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+    <style name="Text.H1.Placeholder">
+        <item name="android:textColor">@color/placeholder_text</item>
+    </style>
+    <style name="Text.H1.Inverted">
+        <item name="android:textColor">@color/main_text_inverted</item>
+    </style>
+    <!--endregion-->
+
+    <!--region H2-->
+    <style name="Text.H2">
+        <item name="android:textSize">27sp</item>
+    </style>
+    <style name="Text.H2.Main"/>
+    <style name="Text.H2.Secondary">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+    <style name="Text.H2.Placeholder">
+        <item name="android:textColor">@color/placeholder_text</item>
+    </style>
+    <style name="Text.H2.Inverted">
+        <item name="android:textColor">@color/main_text_inverted</item>
+    </style>
+    <!--endregion-->
+
+    <!--region H3-->
+    <style name="Text.H3">
+        <item name="android:textSize">20sp</item>
+    </style>
+    <style name="Text.H3.Main"/>
+    <style name="Text.H3.Secondary">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+    <style name="Text.H3.Placeholder">
+        <item name="android:textColor">@color/placeholder_text</item>
+    </style>
+    <style name="Text.H3.Inverted">
+        <item name="android:textColor">@color/main_text_inverted</item>
+    </style>
+    <!--endregion-->
+
+    <!--region H4-->
+    <style name="Text.H4">
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="Text.H4.Main"/>
+    <style name="Text.H4.Secondary">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+    <style name="Text.H4.Placeholder">
+        <item name="android:textColor">@color/placeholder_text</item>
+    </style>
+    <style name="Text.H4.Inverted">
+        <item name="android:textColor">@color/main_text_inverted</item>
+    </style>
+    <!--endregion-->
+
+    <!--region P1-->
+    <style name="Text.P1">
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="Text.P1.Action">
+        <item name="android:textColor">@color/action</item>
+    </style>
+    <style name="Text.P1.Main"/>
+    <style name="Text.P1.Secondary">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+    <style name="Text.P1.Placeholder">
+        <item name="android:textColor">@color/placeholder_text</item>
+    </style>
+    <style name="Text.P1.Inverted">
+        <item name="android:textColor">@color/main_text_inverted</item>
+    </style>
+    <!--endregion-->
+
+    <!--region P2-->
+    <style name="Text.P2">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="Text.P2.Error">
+        <item name="android:textColor">@color/error</item>
+    </style>
+    <style name="Text.P2.Main"/>
+    <style name="Text.P2.Secondary">
+        <item name="android:textColor">@color/secondary_text</item>
+    </style>
+    <style name="Text.P2.Placeholder">
+        <item name="android:textColor">@color/placeholder_text</item>
+    </style>
+    <style name="Text.P2.Inverted">
+        <item name="android:textColor">@color/main_text_inverted</item>
+    </style>
+    <style name="Text.P2.Success">
+        <item name="android:textColor">@color/success</item>
+    </style>
+    <!--endregion-->
+
+    <!--endregion-->
+
+</resources>

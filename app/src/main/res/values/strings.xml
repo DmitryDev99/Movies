@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Movies</string>
+    <string name="change_night_mode">Change night mode</string>
+</resources>

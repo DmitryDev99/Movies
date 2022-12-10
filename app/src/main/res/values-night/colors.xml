@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- цвета текста -->
+    <color name="main_text">#FFFFFF</color>
+    <color name="secondary_text">#B5B7C0</color>
+    <color name="placeholder_text">#797E8B</color>
+    <color name="main_text_inverted">#101828</color>
+
+    <!-- ссылки, действия и результаты -->
+    <color name="action">#9466FF</color>
+    <color name="success">#81EBD6</color>
+    <color name="error">#E22E65</color>
+
+    <!-- основные цвета фонов -->
+    <color name="main_background">#0B0B0C</color>
+    <color name="action_background">#1A1C21</color>
+
+    <!-- цвета иконок -->
+    <color name="main_icon_color">#BCC8CD</color>
+    <color name="secondary_icon_color">#7B939B</color>
+
+    <!-- цвета элементов -->
+    <color name="control_orange">#FF5E2D</color>
+    <color name="control_orange_light">#4A3032</color>
+    <color name="control_purple">#7700FF</color>
+    <color name="control_purple_light">#35325C</color>
+</resources>
