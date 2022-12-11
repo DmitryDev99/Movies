@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/movies_graph"
+    app:startDestination="@id/moviesFlowFragment">
+
+    <fragment
+        android:id="@+id/moviesFlowFragment"
+        android:name="ru.dmitryskor.movies.MoviesFlowFragment"
+        android:label="flow_fragment_movies"
+        tools:layout="@layout/flow_fragment_movies" >
+        <action
+            android:id="@+id/moviesFlowFragment_to_filmFlowFragment"
+            app:destination="@id/filmFlowFragment"
+            app:popUpTo="@id/moviesFlowFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/filmFlowFragment"
+        android:name="ru.dmitryskor.movies.FilmFlowFragment"
+        android:label="flow_fragment_film"
+        tools:layout="@layout/flow_fragment_film" />
+
+</navigation>

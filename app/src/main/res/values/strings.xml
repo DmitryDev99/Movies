@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Movies</string>
+    <string name="menu_item_movies">Фильмы</string>
+    <string name="menu_item_list_apps">Список приложений</string>
 </resources>

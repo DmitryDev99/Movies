@@ -19,8 +19,9 @@ abstract class BaseFlowFragment(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navHostFragment = childFragmentManager.findFragmentById(navHostFragmentId) as NavHostFragment
-        val navController = navHostFragment.navController
+//        val navHostFragment = childFragmentManager.findFragmentById(navHostFragmentId) as NavHostFragment
+//        val navController = navHostFragment.navController
+//        setupNavigation(navController)
     }
 
     protected open fun setupNavigation(navController: NavController) {
