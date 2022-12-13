@@ -1,15 +1,14 @@
 package ru.dmitryskor.movies
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.core.view.isVisible
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.navigation.NavController
+import androidx.navigation.NavGraph
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.dmitryskor.movies.core.navigation.BaseFlowFragment
-import ru.dmitryskor.movies.databinding.FlowFragmentMainBinding
+import ru.dmitryskor.movies.core.navigation.navigateSafely
 
 /**
  * Created by Dmitry Skorodumov on 10.12.2022
@@ -19,52 +18,34 @@ class MainFlowFragment : BaseFlowFragment(
     R.layout.flow_fragment_main,
     R.id.main_nav_host_fragment_container
 ) {
-
-    private lateinit var _binding: FlowFragmentMainBinding
-    private val binding get() = _binding
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _binding = FlowFragmentMainBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        initBottomNavigationView()
-    }
+        val bottomNavMenu = view.findViewById<BottomNavigationView>(R.id.bottom_navigation)
+        val fragContainer = childFragmentManager.findFragmentById(R.id.main_nav_host_fragment_container) as NavHostFragment
+        val navController = fragContainer.navController
+        val navGraphMovies = navController.navInflater.inflate(R.navigation.movies_graph)
+        val navGraphApps = navController.navInflater.inflate(R.navigation.apps_graph)
 
-    private fun startItemSelected(bottomNavMenu: BottomNavigationView, itemId: Int) {
-        bottomNavMenu.selectedItemId = itemId
-    }
+        setDefaultSelectedItem(bottomNavMenu, navController, navGraphMovies, R.id.movies_item_main_menu)
 
-    private fun initBottomNavigationView() {
-        val navController = binding.mainNavHostFragmentContainer.findNavController()
-        binding.bottomNavigation.setupWithNavController(navController)
-        navController.addOnDestinationChangedListener { _, destination, _ ->
-            binding.bottomNavigation.isVisible = getFragmentsWithBottomNav().any { it == destination.id }
-        }
-        binding.bottomNavigation.setOnItemSelectedListener {
+        bottomNavMenu.setOnItemSelectedListener {
             when (it.itemId) {
-                R.id.moviesFlowFragment -> {
-                    navController.graph = navController.navInflater.inflate(R.navigation.movies_graph)
+                R.id.movies_item_main_menu -> {
+                    navController.graph = navGraphMovies
+//                    val action = MainFlowFragmentDirections.actionMainFlowFragmentToMoviesGraph()
+//                    findNavController().navigateSafely(action)
                 }
-                R.id.listAppsFlowFragment -> {
-                    navController.graph = navController.navInflater.inflate(R.navigation.apps_graph)
+                R.id.list_apps_item_main_menu -> {
+                    navController.graph = navGraphApps
+//                    val action = MainFlowFragmentDirections.actionMainFlowFragmentToAppsGraph()
+//                    findNavController().navigateSafely(action)
                 }
             }
             return@setOnItemSelectedListener true
         }
-        startItemSelected(binding.bottomNavigation, R.id.moviesFlowFragment)
     }
 
-    companion object {
-        fun getFragmentsWithBottomNav() = listOf(
-            R.id.moviesFlowFragment,
-            R.id.listAppsFlowFragment,
-        )
+    private fun setDefaultSelectedItem(bottomNavMenu: BottomNavigationView, navController: NavController, navGraph: NavGraph, itemId: Int) {
+        bottomNavMenu.selectedItemId = itemId
+        navController.graph = navGraph
     }
-
 }
