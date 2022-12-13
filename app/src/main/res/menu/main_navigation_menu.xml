@@ -2,11 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/movies_item_main_menu"
+        android:id="@+id/moviesFlowFragment"
         android:title="@string/menu_item_movies" />
 
     <item
-        android:id="@+id/list_apps_item_main_menu"
+        android:id="@+id/listAppsFlowFragment"
         android:title="@string/menu_item_list_apps" />
 
 </menu>
